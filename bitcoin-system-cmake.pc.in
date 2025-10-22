@@ -1,0 +1,9 @@
+prefix=@INSTALL_PREFIX@
+libdir=${prefix}/lib
+includedir=${prefix}/include
+Name: libbitcoin-system
+Description: Cross-Platform C++ Bitcoin System Library
+URL: https://github.com/libbitcoin/libbitcoin-system
+Version: 4.0.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -llibbitcoin-system -lboost_iostreams -lboost_locale -lboost_program_options -lboost_regex -lboost_thread -lboost_url -lsecp256k1 -lpthread -lrt -ldl
