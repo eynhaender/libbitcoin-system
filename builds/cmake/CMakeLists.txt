@@ -658,6 +658,8 @@ if (with-tests)
         "../../test/chain/taproot.cpp"
         "../../test/chain/tapscript.cpp"
         "../../test/chain/transaction.cpp"
+        "../../test/chain/transaction_mainnet.cpp"
+        "../../test/chain/transaction_vectors.cpp"
         "../../test/chain/witness.cpp"
         "../../test/chain/enums/opcode.cpp"
         "../../test/chain/json/block.cpp"
@@ -762,6 +764,7 @@ if (with-tests)
         "../../test/intrinsics/platforms/neon.cpp"
         "../../test/intrinsics/platforms/sve.cpp"
         "../../test/machine/interpreter.cpp"
+        "../../test/machine/interpreter.hpp"
         "../../test/machine/number.cpp"
         "../../test/machine/program.cpp"
         "../../test/machine/sizing.cpp"
@@ -881,6 +884,11 @@ if (with-tests)
 #------------------------------------------------------------------------------
     target_include_directories( libbitcoin-system-test PRIVATE
         "../../include" )
+
+#     libbitcoin-system-test project specific compile definitions.
+#------------------------------------------------------------------------------
+    target_compile_definitions( libbitcoin-system-test PRIVATE
+        "TEST_VECTORS_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/../../test/vectors\"" )
 
 #     libbitcoin-system-test project specific libraries/linker flags.
 #------------------------------------------------------------------------------
